@@ -23,7 +23,7 @@ local SkidId = {
 }
 
 local OwnerId = {
-	[3137288028] = true,
+	[7338985255] = true,
 	[] = true,
 }
 
