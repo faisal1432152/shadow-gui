@@ -24,7 +24,7 @@ local SkidId = {
 
 local OwnerId = {
 	[7338985255] = true,
-	[] = true,
+	[7356284598] = true,
 }
 
 local EnemyId = {
