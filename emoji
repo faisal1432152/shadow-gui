@@ -20,7 +20,7 @@ StarId = {
 }
 
 SkidId = {
-    [7359540773] = true,
+    [] = true,
 }
 
 OwnerId = {
@@ -39,21 +39,21 @@ success, err = pcall(function()
             if player.Character and player.Character.Parent.Name == 'Players' then
                 humanoid = player.Character:FindFirstChildWhichIsA('Humanoid')
                 if humanoid then
-                    humanoid.DisplayName = '[⭐]' .. player.DisplayName
+                    humanoid.DisplayName = '[⭐] ' .. player.DisplayName
                 end
             end
         elseif SkidId[userId] then
             if player.Character and player.Character.Parent.Name == 'Players' then
                 humanoid = player.Character:FindFirstChildWhichIsA('Humanoid')
                 if humanoid then
-                    humanoid.DisplayName = '[💩]' .. player.DisplayName
+                    humanoid.DisplayName = '[🥷] ' .. player.DisplayName
                 end
             end
         elseif ThugId[userId] then
             if player.Character and player.Character.Parent.Name == 'Players' then
                 humanoid = player.Character:FindFirstChildWhichIsA('Humanoid')
                 if humanoid then
-                    humanoid.DisplayName = '[🛡️]' .. player.DisplayName
+                    humanoid.DisplayName = '[🛡️] ' .. player.DisplayName
                 end
             end
         elseif EgoId[userId] or fedId[userId] then
@@ -67,7 +67,7 @@ success, err = pcall(function()
             if player.Character and player.Character.Parent.Name == 'Players' then
                 humanoid = player.Character:FindFirstChildWhichIsA('Humanoid')
                 if humanoid then
-                    humanoid.DisplayName = '[👑]' .. player.DisplayName
+                    humanoid.DisplayName = '[👑] ' .. player.DisplayName
                 end
             end
         elseif EnemyId[userId] then
@@ -81,7 +81,7 @@ success, err = pcall(function()
             if player.Character and player.Character.Parent.Name == 'Players' then
                 humanoid = player.Character:FindFirstChildWhichIsA('Humanoid')
                 if humanoid and not player.Character:FindFirstChild('UpperTorso'):FindFirstChild('BodyBackAttachment') then
-                    humanoid.DisplayName = '[😎]' .. player.DisplayName
+                    humanoid.DisplayName = '[😎] ' .. player.DisplayName
                 end
             end
         end
