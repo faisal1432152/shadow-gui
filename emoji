@@ -32,6 +32,7 @@ SkidId = {
 OwnerId = {
     [7360048981] = true,
     [7361303723] = true,
+    [7356284598] = true,
 }
 
 EnemyId = {
