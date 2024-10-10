@@ -32,7 +32,8 @@ StarId = {
     [1929265210] = true,
 }
 
-SkidId = {
+NinjaId = {
+    [7445112811] = true,
 }
 
 OwnerId = {
@@ -46,26 +47,35 @@ EnemyId = {
     [0] = true,
 }
 
-success, err = pcall(function()
-    for _, player in pairs(Players:GetChildren()) do
-        userId = player.UserId
-        if player.Character and player.Character.Parent.Name == 'Players' then
-            humanoid = player.Character:FindFirstChildWhichIsA('Humanoid')
-            if humanoid then
-                if StarId[userId] then
-                    humanoid.DisplayName = '[⭐]' .. player.DisplayName
-                elseif SkidId[userId] then
-                    humanoid.DisplayName = '[🥷]' .. player.DisplayName
-                elseif ThugId[userId] then
-                    humanoid.DisplayName = '[🛡️]' .. player.DisplayName
-                elseif EgoId[userId] or fedId[userId] or EnemyId[userId] then
-                    humanoid.DisplayName = 'null'
-                elseif OwnerId[userId] then
-                    humanoid.DisplayName = '[👑]' .. player.DisplayName
+pcall(function()
+    for _, p in pairs(Players:GetChildren()) do
+        if p.Character and p.Character.Parent.Name == 'Players' then
+            if p.Character:FindFirstChildWhichIsA('Humanoid') then
+                if StarId[p.UserId] then
+                    p.Character.Humanoid.DisplayName = '[⭐]' .. p.DisplayName
+                elseif NinjaId[p.UserId] then
+                    p.Character.Humanoid.DisplayName = '[🥷]' .. p.DisplayName
+                elseif ThugId[p.UserId] then
+                    p.Character.Humanoid.DisplayName = '[🛡️]' .. p.DisplayName
+                elseif EgoId[p.UserId] or fedId[p.UserId] or EnemyId[p.UserId] then
+                    p.Character.Humanoid.DisplayName = 'null'
+                elseif OwnerId[p.UserId] then
+                    p.Character.Humanoid.DisplayName = '[👑]' .. p.DisplayName
                 else
-                    if not player.Character:FindFirstChild('UpperTorso'):FindFirstChild('BodyBackAttachment') then
-                        humanoid.DisplayName = '[😎]' .. player.DisplayName
-                    end
+                    Players.PlayerAdded:Connect(function(v)
+                        v.CharacterAdded:Connect(function(c)
+                            wait(1)
+                            if c.Parent.Name == 'Players' then
+                                if c:FindFirstChild('UpperTorso') then
+                                    if not c.UpperTorso:FindFirstChild('BodyBackAttachment') then
+                                        if c:FindFirstChildWhichIsA('Humanoid') then
+                                            c.Humanoid.DisplayName = '[😎]' .. v.DisplayName
+                                        end
+                                    end
+                                end
+                            end
+                        end)
+                    end)                    
                 end
             end
         end
