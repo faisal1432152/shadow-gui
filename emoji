@@ -1,20 +1,10 @@
-Players = game:GetService('Players')
 
-EgoId = {
+
+local ThugId = {
     [0] = true,
 }
 
-fedId = {
-    [0] = true,
-}
-
-ThugId = {
-    [0] = true,
-    [1] = true,
-    [2] = true,
-}
-
-StarId = {
+local StarId = {
     [7327961600] = true,
     [2838173673] = true,
     [5385535892] = true,
@@ -32,52 +22,39 @@ StarId = {
     [1929265210] = true,
 }
 
-NinjaId = {
-    [7445112811] = true,
+local DetectiveId = {
+    [7356284598] = true,
 }
 
-OwnerId = {
+local OwnerId = {
     [7360048981] = true,
     [7361303723] = true,
     [7356284598] = true,
     [4439254684] = true,
 }
 
-EnemyId = {
-    [0] = true,
-}
 
-pcall(function()
-    for _, p in pairs(Players:GetChildren()) do
-        if p.Character and p.Character.Parent.Name == 'Players' then
-            if p.Character:FindFirstChildWhichIsA('Humanoid') then
-                if StarId[p.UserId] then
-                    p.Character.Humanoid.DisplayName = '[⭐]' .. p.DisplayName
-                elseif NinjaId[p.UserId] then
-                    p.Character.Humanoid.DisplayName = '[🥷]' .. p.DisplayName
-                elseif ThugId[p.UserId] then
-                    p.Character.Humanoid.DisplayName = '[🛡️]' .. p.DisplayName
-                elseif EgoId[p.UserId] or fedId[p.UserId] or EnemyId[p.UserId] then
-                    p.Character.Humanoid.DisplayName = 'null'
-                elseif OwnerId[p.UserId] then
-                    p.Character.Humanoid.DisplayName = '[👑]' .. p.DisplayName
-                else
-                    Players.PlayerAdded:Connect(function(v)
-                        v.CharacterAdded:Connect(function(c)
-                            wait(1)
-                            if c.Parent.Name == 'Players' then
-                                if c:FindFirstChild('UpperTorso') then
-                                    if not c.UpperTorso:FindFirstChild('BodyBackAttachment') then
-                                        if c:FindFirstChildWhichIsA('Humanoid') then
-                                            c.Humanoid.DisplayName = '[😎]' .. v.DisplayName
-                                        end
-                                    end
-                                end
-                            end
-                        end)
-                    end)                    
-                end
-            end
-        end
-    end
-end)
+
+for _, v in pairs(game:GetService('Players'):GetChildren()) do
+	if StarId[v.UserId] then
+		if v.Character and v.Character.Parent.Name == 'Players' then
+			v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐] ' .. v.DisplayName)
+		end
+	elseif DetectiveId[v.UserId] then
+		if v.Character and v.Character.Parent.Name == 'Players' then
+			v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🕵️‍♂️] ' .. v.DisplayName)
+		end
+	elseif ThugId[v.UserId] then
+		if v.Character and v.Character.Parent.Name == 'Players' then
+			v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🛡️] ' .. v.DisplayName)
+		end
+	elseif OwnerId[v.UserId] then
+		if v.Character and v.Character.Parent.Name == 'Players' then
+			v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑] ' .. v.DisplayName)
+		end
+	elseif v.Character and v.Character.Parent.Name == 'Players' then
+		if not v.Character:FindFirstChild('UpperTorso'):FindFirstChild('BodyBackAttachment') then
+			v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[😎] ' .. v.DisplayName)
+		end
+	end
+end
