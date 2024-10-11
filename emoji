@@ -23,7 +23,7 @@ local StarId = {
 }
 
 local DetectiveId = {
-    [7356284598] = true,
+    [7445112811] = true,
 }
 
 local OwnerId = {
