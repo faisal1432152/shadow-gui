@@ -22,6 +22,7 @@ local StarId = {
     [1929265210] = true,
     [4886767264] = true,
     [7454961773] = true,
+    [1712049069] = ture,
 }
 
 local DetectiveId = {
