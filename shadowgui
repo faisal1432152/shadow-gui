@@ -1,1 +1,1 @@
-[ill put loadstring here]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/faisal1432152/shadow-gui/refs/heads/main/shadowguiv3beta.lua"))()
