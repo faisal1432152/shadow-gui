@@ -6,4 +6,4 @@
 ██████╔╝██║░░██║██║░░██║██████╔╝╚█████╔╝░░╚██╔╝░╚██╔╝░  ╚██████╔╝╚██████╔╝██║  ██████╔╝██║░░██║
 ╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░░╚════╝░░░░╚═╝░░░╚═╝░░  ░╚═════╝░░╚═════╝░╚═╝  ╚═════╝░╚═╝░░╚═╝
 
-[chill its me S1ns432 im trying to bypass dh]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/faisal1432152/shadow-gui/refs/heads/main/shadowguiv3beta.lua"))()
