@@ -1,4 +1,5 @@
 return {
+   7453858568,
    5741340361,
    3966762661,
    7989755568,
@@ -32,5 +33,5 @@ return {
    909479836,
    7356284598,
    7706854865,
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/faisal31312/elemental/refs/heads/main/elementalguipremium"))(),
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/faisal31312/elemental/refs/heads/main/elementalguipremium"))()
 }
